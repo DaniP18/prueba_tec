@@ -1,15 +1,13 @@
 {
-  "name": "text-tools-api",
-  "version": "1.0.0",
-  "description": "API basica para procesar y transformar texto",
+  "name": "prueba_tec",
+  "version": "1.1.0",
+  "description": "API + frontend sencillo para procesar/transformar texto",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node index.js",
-    "dev": "NODE_ENV=development node index.js"
+    "start": "node index.js"
   },
   "dependencies": {
-    "cors": "^2.8.5",
     "express": "^4.19.2",
     "morgan": "^1.10.0"
   }

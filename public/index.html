@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Text Tools</title>
+  <style>
+    :root { font-family: system-ui, sans-serif; }
+    body { max-width: 900px; margin: 24px auto; padding: 0 12px; }
+    h1 { margin-bottom: 0.25rem; }
+    .card { border: 1px solid #ddd; border-radius: 12px; padding: 16px; margin: 16px 0; }
+    .row { display: grid; gap: 12px; grid-template-columns: 1fr 1fr; }
+    textarea, pre, select, button, input { width: 100%; font: inherit; }
+    textarea { min-height: 160px; }
+    pre { background: #0f172a; color: #e2e8f0; padding: 12px; border-radius: 8px; overflow:auto; }
+    .actions { display: flex; gap: 8px; flex-wrap: wrap; }
+    .btn { padding: 10px 14px; border: 1px solid #333; border-radius: 10px; background:#111; color:#fff; cursor:pointer }
+    .btn.secondary { background:#fff; color:#111; }
+    .ok { color: #16a34a; }
+    .err { color: #dc2626; }
+    .hint { color:#475569; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <h1>Text Tools</h1>
+  <p class="hint">Prueba <code>POST /text/process</code> y <code>POST /text/transform</code> desde esta página.</p>
+
+  <div class="card">
+    <label>Endpoint</label>
+    <select id="endpoint">
+      <option value="/text/process">/text/process</option>
+      <option value="/text/transform">/text/transform</option>
+    </select>
+    <div class="actions" style="margin-top:8px">
+      <button class="btn secondary" id="ex1">Ejemplo /text/process</button>
+      <button class="btn secondary" id="ex2">Ejemplo /text/transform</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <div>
+        <label>Request JSON</label>
+        <textarea id="input"></textarea>
+        <div class="actions">
+          <button class="btn" id="sendBtn">Enviar</button>
+          <button class="btn secondary" id="clearBtn">Limpiar</button>
+        </div>
+        <p id="status"></p>
+      </div>
+      <div>
+        <label>Respuesta</label>
+        <pre id="output">{}</pre>
+      </div>
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
